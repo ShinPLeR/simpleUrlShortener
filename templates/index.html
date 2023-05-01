@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Simple URL Shortener</title>
+</head>
+<body>
+    <header>
+
+    </header>
+    <main>
+        <form action="" method="POST">
+            {{ form.hidden_tag() }}
+
+            {{ form.original_url.label }}
+            <div>
+                {{ form.original_url }}
+                {% for err in form.original_url.errors %}
+                <span class="error-label">{{ err }}</span>
+                {% endfor %}
+            </div>
+
+            {{ form.arbitrary_id.label }}
+            <div>
+                {{ form.arbitrary_id }}
+                {% for err in form.arbitrary_id.errors %}
+                <span class="error-label">{{ err }}</span>
+                {% endfor %}
+            </div>
+
+            <input type="submit" value="submit">
+        </form>
+    </main>
+    <footer>
+
+    </footer>
+</body>
+</html>
